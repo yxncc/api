@@ -3,22 +3,24 @@ from .extensions import db
 
 
 class User(db.Model):
-    __tablename__ = 'users'
+    tablename = 'users'
     id = Column(Integer, primary_key=True)
     name = Column(String(50), unique=True)
     email = Column(String(120), unique=True)
     posts = db.relationship('Post', back_populates='user')
 
-    def __init__(self, name=None, email=None):
+    def init(self, name=None, email=None):
         self.name = name
         self.email = email
 
-    def __repr__(self):
-        return '<User %r>' % (self.name)
+    def repr(self):
+        return '<User %r>' % self.name
 
 
 class Post(db.Model):
-    __tablename__ = 'posts'
+    tablename = 'posts'
     id = Column(Integer, primary_key=True)
-    user = db.relationship('User')
+    user_id = db.Column('user_id', db.ForeignKey('users.id'), nullable=True)
     content = db.Column(String)
+
+    user = db.relationship('User')
