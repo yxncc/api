@@ -1,9 +1,7 @@
 from flask import Flask
-
 from .config_routes import init_routes
 from .extensions import db, migrate
 from .config import DevelopmentConfig
-
 
 def create_app():
     # create and configure the app

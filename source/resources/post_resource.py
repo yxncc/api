@@ -2,7 +2,7 @@ from flask_restful import Resource
 
 from ..shema import PostSchema
 from ..extensions import db
-from ..models import Post
+
 
 
 class PostResource(Resource):
