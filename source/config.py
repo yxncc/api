@@ -16,4 +16,4 @@ class DevelopmentConfig(Config):
     SQLALCHEMY_DATABASE_URI = 'postgresql://postgres:W4L3R6Af@localhost:5433/Pc_kompleckt'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SECRET_KEY = 'your secret key'
-    DEBUG = False
+    DEBUG = True

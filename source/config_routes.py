@@ -1,15 +1,11 @@
-from flask_restful import Api, Resource
-from .resources.file_resource import FileResource
-from .resources.qwe_resource import QweResource
+from flask_restful import Api
+from .resources.provider_resource import ProviderDetailResource, ProviderListResource
 
 
 def init_routes(app):
     api = Api(app)
-    api.add_resource(FileResource, '/')
-    api.add_resource(QweResource, '/ee')
+    api.add_resource(ProviderListResource, '/providers/')
+    api.add_resource(ProviderDetailResource, '/providers/<int:provider_id>')
 
 
 
-class HelloWorld(Resource):
-    def get(self):
-        return {'hello': 'world'}

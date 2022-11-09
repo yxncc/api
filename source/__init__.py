@@ -4,6 +4,7 @@ from .extensions import db, migrate
 from .config import DevelopmentConfig
 from . import models
 
+
 def create_app():
     # create and configure the app
     app = Flask(__name__, instance_relative_config=True)
