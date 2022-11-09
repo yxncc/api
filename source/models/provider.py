@@ -3,8 +3,8 @@ from ..extensions import db
 
 
 class Provider(db.Model):
-    __tablename__ = 'provider'
+    __tablename__ = 'providers'
     id = db.Column(Integer, primary_key=True)
     name = db.Column(String(50), unique=True)
 
-    tovars = db.relationship('Tovar', back_populates='provider')
+    products = db.relationship('Product', back_populates='provider', lazy=True)

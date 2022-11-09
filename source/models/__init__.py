@@ -1,6 +1,8 @@
-from .post import Post
+from .order import Order
+from .order import OrderProduct
+from .position import Position
 from .provider import Provider
-from .tovar import Tovars
-from .users import Users
+from .product import Product
+from .user import User
 from .worker import Worker
-from .zakaz import ZakazTovar
+

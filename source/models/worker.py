@@ -10,9 +10,9 @@ class Worker(db.Model):
     father_name = db.Column(String(50), unique=True)
     email = db.Column(String(50), unique=True)
     birthday = db.Column(String(50), unique=True)
-    post_id = db.Column('post_id', db.ForeignKey('posts.id'))
+    position_id = db.Column('position_id', db.ForeignKey('positions.id'))
 
-    post = db.relationship('Post', back_populates='workers')
-    zakaz = db.relationship('Zakaz', back_populates='worker')
+    position = db.relationship('Position', back_populates='workers')
+    orders = db.relationship('Order', back_populates='worker')
 
 

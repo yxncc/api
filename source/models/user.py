@@ -2,7 +2,7 @@ from sqlalchemy import Integer, String
 from ..extensions import db
 
 
-class Users(db.Model):
+class User(db.Model):
     __tablename__ = 'users'
     id = db.Column(Integer, primary_key=True)
     first_name = db.Column(String(50), unique=True)
@@ -10,6 +10,6 @@ class Users(db.Model):
     father_name = db.Column(String(50), unique=True)
     email = db.Column(String(50), unique=True)
 
-    zakaz = db.relationship('Zakaz', back_populates='user')
+    orders = db.relationship('Order', back_populates='user')
 
 
