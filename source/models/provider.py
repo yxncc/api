@@ -8,3 +8,6 @@ class Provider(db.Model):
     name = db.Column(String(50), unique=True)
 
     products = db.relationship('Product', back_populates='provider', lazy=True)
+
+    def update(self, data):
+        self.name = data.name
