@@ -8,3 +8,6 @@ class Position(db.Model):
     name = db.Column(String(50), unique=True)
 
     workers = db.relationship('Worker', back_populates='position')
+
+    def update(self, data):
+        self.name = data.name
