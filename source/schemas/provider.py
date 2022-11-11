@@ -6,7 +6,7 @@ from ..models import Provider
 
 class ProviderSchema(Schema):
     id = mf.Integer()
-    name = mf.String()
+    name = mf.String(required=True)
     products = mf.List(
         mf.Nested(ProductSchema(), dump_only=True)
     )

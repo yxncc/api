@@ -6,7 +6,7 @@ from ..models import Position
 
 class PositionSchema(Schema):
     id = mf.Integer()
-    name = mf.String()
+    name = mf.String(required=True)
     workers = mf.List(
         mf.Nested(WorkerSchema())
     )
