@@ -15,4 +15,4 @@ class Order(db.Model):
 
     worker = db.relationship('Worker', back_populates='orders')
     user = db.relationship('User', back_populates='orders')
-    products = db.relationship('Product', secondary=OrderProduct, backref='Order')
+    products = db.relationship('Product', secondary='orders_products',  back_populates='orders')
