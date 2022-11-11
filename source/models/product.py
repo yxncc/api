@@ -15,4 +15,7 @@ class Product(db.Model):
     )
 
     provider = db.relationship('Provider', back_populates='products')
-    orders = db.relationship('Order', secondary=OrderProduct, backref='Product')
+    orders = db.relationship('Order', secondary='orders_products', back_populates='products')
+
+    def update(self, data):
+        self.name = data.name
