@@ -12,7 +12,7 @@ class ProductSchema(Schema):
         ordered = True
 
     @post_load
-    def make_position(self, data, **kwargs):
+    def make_product(self, data, **kwargs):
         return Product(
             name=data['name'],
             provider_id=data['provider_id']

@@ -19,7 +19,7 @@ class UserSchema(Schema):
         ordered = True
 
     @post_load
-    def make_provider(self, data, **kwargs):
+    def make_user(self, data, **kwargs):
         return User(
             first_name=data['first_name'],
             last_name=data['last_name'],
