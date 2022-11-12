@@ -12,4 +12,8 @@ class User(db.Model):
 
     orders = db.relationship('Order', back_populates='user')
 
-
+    def update(self, data):
+        self.first_name = data.first_name
+        self.last_name = data.last_name
+        self.father_name = data.father_name
+        self.email = data.email
