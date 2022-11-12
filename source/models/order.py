@@ -12,6 +12,7 @@ class Order(db.Model):
     id = db.Column(Integer, primary_key=True)
     worker_id = db.Column(Integer, db.ForeignKey('workers.id'))
     user_id = db.Column(Integer, db.ForeignKey('users.id'))
+    is_active = db.Column(db.Boolean, default=True)
 
     worker = db.relationship('Worker', back_populates='orders')
     user = db.relationship('User', back_populates='orders')
