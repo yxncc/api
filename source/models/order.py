@@ -17,3 +17,8 @@ class Order(db.Model):
     worker = db.relationship('Worker', back_populates='orders')
     user = db.relationship('User', back_populates='orders')
     products = db.relationship('Product', secondary='orders_products',  back_populates='orders')
+
+    def update(self, data):
+        self.is_active = data['is_active']
+        self.worker_id = data['worker_id']
+        self.products = data['products']
