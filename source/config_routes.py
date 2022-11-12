@@ -1,7 +1,7 @@
 from flask_restful import Api
 from .resources import ProviderDetailResource, ProviderListResource, ProductDetailResource, ProductListResource,\
     PositionDetailResource, PositionListResource, WorkerDetailResource, WorkerListResource,\
-    UserDetailResource, UserListResource
+    UserDetailResource, UserListResource, OrderDetailResource, OrderListResource
 
 
 def init_routes(app):
@@ -21,6 +21,5 @@ def init_routes(app):
     api.add_resource(WorkerListResource, '/workers/')
     api.add_resource(WorkerDetailResource, '/workers/<int:worker_id>')
 
-
-
-
+    api.add_resource(OrderListResource, '/orders/')
+    api.add_resource(OrderDetailResource, '/orders/<int:order_id>')
