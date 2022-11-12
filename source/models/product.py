@@ -10,8 +10,7 @@ class Product(db.Model):
     name = db.Column(String, nullable=False)
     provider_id = db.Column(
         Integer,
-        db.ForeignKey('providers.id'),
-        unique=True
+        db.ForeignKey('providers.id')
     )
 
     provider = db.relationship('Provider', back_populates='products')
